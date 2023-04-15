@@ -15,6 +15,10 @@
 * UIKit
 * URLSession
 * DispatchQueue
+* Core Data
+
+## Building:
+* Clone repository, open project, run
 
 ## Demo:
 <video src="https://user-images.githubusercontent.com/68143464/232217048-b5a1fa44-9415-428c-95dc-60bf339dc8e8.mp4" controls="controls" style="max-width: 730px;">
