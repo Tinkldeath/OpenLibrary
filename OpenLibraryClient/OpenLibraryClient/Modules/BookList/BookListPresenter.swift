@@ -10,7 +10,6 @@ protocol BookListPresenterProtocol {
     func presentNotFound()
     func presentBooks(_ books: [BookListItemProtocol])
     func presentEndLoading()
-    func presentBookDetails(_ book: BookListDetailedItemProtocol)
 }
 
 
@@ -42,10 +41,6 @@ final class BookListPresenter: BookListPresenterProtocol {
     
     func presentEndLoading() {
         self.view?.displayEndLoading()
-    }
-    
-    func presentBookDetails(_ book: BookListDetailedItemProtocol) {
-    
     }
     
 }

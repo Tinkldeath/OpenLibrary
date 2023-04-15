@@ -7,6 +7,7 @@ protocol BookListInteractorProtocol {
     
     func requestBooks(_ request: String)
     func bookDetails(_ index: Int)
+    func filter(_ option: FilterOption)
 }
 
 
@@ -24,12 +25,33 @@ final class BookListInteractor: BookListInteractorProtocol  {
                 let docs = try? JSONDecoder().decode(Docs.self, from: data)
                 self?.parseDocs(docs ?? Docs(docs: []))
             }
+            if let _ = error {
+                DispatchQueue.main.async {
+                    self?.presenter?.presentEndLoading()
+                    self?.presenter?.presentError()
+                }
+            }
         }
         session.resume()
     }
     
     func bookDetails(_ index: Int) {
-        
+        guard let book = self.books[index] as? Book else { return }
+        self.presenter?.view?.router.routeToBookDetails(book.key, book)
+    }
+    
+    func filter(_ option: FilterOption) {
+        switch option {
+        case .ratingUp:
+            self.books = self.books.sorted(by: { Double($0.rating) ?? 0 > Double($1.rating) ?? 0 } )
+            self.presenter?.presentBooks(self.books)
+        case .ratingDown:
+            self.books = self.books.sorted(by: { Double($0.rating) ?? 0 < Double($1.rating) ?? 0 } )
+            self.presenter?.presentBooks(self.books)
+        case .coverFirst:
+            self.books = self.books.sorted(by: { $0.cover != nil && $1.cover == nil } )
+            self.presenter?.presentBooks(self.books)
+        }
     }
     
     private func parseDocs(_ docs: Docs) {

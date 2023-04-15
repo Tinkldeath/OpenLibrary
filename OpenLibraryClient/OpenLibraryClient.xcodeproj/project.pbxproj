@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32255A3529EA9EF800A90871 /* BookDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32255A3429EA9EF800A90871 /* BookDetailsInteractor.swift */; };
+		32255A3729EA9F6300A90871 /* BookDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32255A3629EA9F6300A90871 /* BookDetailsPresenter.swift */; };
+		32255A3929EA9FCF00A90871 /* BookDetailsEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32255A3829EA9FCF00A90871 /* BookDetailsEntities.swift */; };
+		32255A3B29EAA29F00A90871 /* BookDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32255A3A29EAA29F00A90871 /* BookDetailsRouter.swift */; };
+		32255A3D29EAA2C800A90871 /* BookDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32255A3C29EAA2C800A90871 /* BookDetailsConfigurator.swift */; };
 		32C6C07329E99531009697E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6C07229E99531009697E5 /* AppDelegate.swift */; };
 		32C6C07529E99531009697E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6C07429E99531009697E5 /* SceneDelegate.swift */; };
 		32C6C07A29E99531009697E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32C6C07829E99531009697E5 /* Main.storyboard */; };
@@ -20,14 +25,17 @@
 		32C6C09729E99A9A009697E5 /* BookListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6C09629E99A9A009697E5 /* BookListRouter.swift */; };
 		32C6C09929E99AA8009697E5 /* BookListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6C09829E99AA8009697E5 /* BookListConfigurator.swift */; };
 		32C6C09B29E9A563009697E5 /* BookDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6C09A29E9A563009697E5 /* BookDetailsView.swift */; };
-		32C6C09D29E9B6BA009697E5 /* BookListWorkers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6C09C29E9B6BA009697E5 /* BookListWorkers.swift */; };
-		32C6C09F29E9B930009697E5 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C6C09E29E9B930009697E5 /* Observable.swift */; };
 		32E57DD129E9F077008C241E /* CachedImage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E57DCF29E9F077008C241E /* CachedImage+CoreDataClass.swift */; };
 		32E57DD229E9F077008C241E /* CachedImage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E57DD029E9F077008C241E /* CachedImage+CoreDataProperties.swift */; };
 		32E57DD629E9F0AF008C241E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E57DD529E9F0AF008C241E /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32255A3429EA9EF800A90871 /* BookDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsInteractor.swift; sourceTree = "<group>"; };
+		32255A3629EA9F6300A90871 /* BookDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsPresenter.swift; sourceTree = "<group>"; };
+		32255A3829EA9FCF00A90871 /* BookDetailsEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsEntities.swift; sourceTree = "<group>"; };
+		32255A3A29EAA29F00A90871 /* BookDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsRouter.swift; sourceTree = "<group>"; };
+		32255A3C29EAA2C800A90871 /* BookDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsConfigurator.swift; sourceTree = "<group>"; };
 		32C6C06F29E99531009697E5 /* OpenLibraryClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenLibraryClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C6C07229E99531009697E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32C6C07429E99531009697E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,8 +51,6 @@
 		32C6C09629E99A9A009697E5 /* BookListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListRouter.swift; sourceTree = "<group>"; };
 		32C6C09829E99AA8009697E5 /* BookListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListConfigurator.swift; sourceTree = "<group>"; };
 		32C6C09A29E9A563009697E5 /* BookDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsView.swift; sourceTree = "<group>"; };
-		32C6C09C29E9B6BA009697E5 /* BookListWorkers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListWorkers.swift; sourceTree = "<group>"; };
-		32C6C09E29E9B930009697E5 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		32E57DCF29E9F077008C241E /* CachedImage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedImage+CoreDataClass.swift"; sourceTree = "<group>"; };
 		32E57DD029E9F077008C241E /* CachedImage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CachedImage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		32E57DD529E9F0AF008C241E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -83,12 +89,10 @@
 				32E57DD329E9F07E008C241E /* Data */,
 				32C6C08C29E998AD009697E5 /* Storyboards */,
 				32C6C08929E99897009697E5 /* Modules */,
-				32C6C09E29E9B930009697E5 /* Observable.swift */,
 				32C6C07229E99531009697E5 /* AppDelegate.swift */,
 				32C6C07429E99531009697E5 /* SceneDelegate.swift */,
 				32C6C07E29E99533009697E5 /* Assets.xcassets */,
 				32C6C08329E99533009697E5 /* Info.plist */,
-				32C6C07B29E99531009697E5 /* OpenLibraryClient.xcdatamodeld */,
 			);
 			path = OpenLibraryClient;
 			sourceTree = "<group>";
@@ -111,7 +115,6 @@
 				32C6C09429E99A8E009697E5 /* BookListEntities.swift */,
 				32C6C09629E99A9A009697E5 /* BookListRouter.swift */,
 				32C6C09829E99AA8009697E5 /* BookListConfigurator.swift */,
-				32C6C09C29E9B6BA009697E5 /* BookListWorkers.swift */,
 			);
 			path = BookList;
 			sourceTree = "<group>";
@@ -120,6 +123,11 @@
 			isa = PBXGroup;
 			children = (
 				32C6C09A29E9A563009697E5 /* BookDetailsView.swift */,
+				32255A3429EA9EF800A90871 /* BookDetailsInteractor.swift */,
+				32255A3629EA9F6300A90871 /* BookDetailsPresenter.swift */,
+				32255A3829EA9FCF00A90871 /* BookDetailsEntities.swift */,
+				32255A3A29EAA29F00A90871 /* BookDetailsRouter.swift */,
+				32255A3C29EAA2C800A90871 /* BookDetailsConfigurator.swift */,
 			);
 			path = BookDetails;
 			sourceTree = "<group>";
@@ -138,6 +146,7 @@
 			children = (
 				32E57DD429E9F083008C241E /* CachedImage */,
 				32E57DD529E9F0AF008C241E /* CoreDataManager.swift */,
+				32C6C07B29E99531009697E5 /* OpenLibraryClient.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -223,20 +232,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				32C6C07D29E99531009697E5 /* OpenLibraryClient.xcdatamodeld in Sources */,
-				32C6C09D29E9B6BA009697E5 /* BookListWorkers.swift in Sources */,
 				32C6C09329E99A7E009697E5 /* BookListPresenter.swift in Sources */,
 				32E57DD629E9F0AF008C241E /* CoreDataManager.swift in Sources */,
 				32C6C09B29E9A563009697E5 /* BookDetailsView.swift in Sources */,
-				32C6C09F29E9B930009697E5 /* Observable.swift in Sources */,
+				32255A3929EA9FCF00A90871 /* BookDetailsEntities.swift in Sources */,
+				32255A3B29EAA29F00A90871 /* BookDetailsRouter.swift in Sources */,
 				32C6C07329E99531009697E5 /* AppDelegate.swift in Sources */,
 				32C6C09529E99A8E009697E5 /* BookListEntities.swift in Sources */,
 				32C6C07529E99531009697E5 /* SceneDelegate.swift in Sources */,
 				32C6C09129E99A6F009697E5 /* BookListInteractor.swift in Sources */,
+				32255A3529EA9EF800A90871 /* BookDetailsInteractor.swift in Sources */,
 				32E57DD129E9F077008C241E /* CachedImage+CoreDataClass.swift in Sources */,
 				32C6C08F29E998EF009697E5 /* BookListView.swift in Sources */,
 				32C6C09929E99AA8009697E5 /* BookListConfigurator.swift in Sources */,
 				32C6C09729E99A9A009697E5 /* BookListRouter.swift in Sources */,
+				32255A3729EA9F6300A90871 /* BookDetailsPresenter.swift in Sources */,
 				32E57DD229E9F077008C241E /* CachedImage+CoreDataProperties.swift in Sources */,
+				32255A3D29EAA2C800A90871 /* BookDetailsConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,13 +399,13 @@
 				DEVELOPMENT_TEAM = 97AF9CH96R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OpenLibraryClient/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Open Library Catalog";
+				INFOPLIST_KEY_CFBundleDisplayName = "Open Library";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -422,13 +434,13 @@
 				DEVELOPMENT_TEAM = 97AF9CH96R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OpenLibraryClient/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Open Library Catalog";
+				INFOPLIST_KEY_CFBundleDisplayName = "Open Library";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

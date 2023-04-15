@@ -7,18 +7,6 @@ protocol BookListItemProtocol {
     var cover: Int? { get }
 }
 
-protocol BookListDetailedItemProtocol: BookListItemProtocol {
-    var description: String { get }
-    var authors: [String] { get }
-    var rating: String { get }
-}
-
-struct FetchedData: Codable {
-    var title: String?
-    var description: String?
-    var covers: [Int]?
-    var first_publish_date: String?
-}
 
 struct Book: BookListDetailedItemProtocol {
     
@@ -30,4 +18,18 @@ struct Book: BookListDetailedItemProtocol {
     var firstPublishDate: String
     var cover: Int?
     
+    mutating func setDescription(_ description: String) {
+        self.description = description
+    }
+    
+    mutating func setCover(_ cover: Int?) {
+        self.cover = cover
+    }
+    
+}
+
+enum FilterOption: String, CaseIterable {
+    case ratingUp = "Top rated first"
+    case ratingDown = "Top rated last"
+    case coverFirst = "With cover first"
 }

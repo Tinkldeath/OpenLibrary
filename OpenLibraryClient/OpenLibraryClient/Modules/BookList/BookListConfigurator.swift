@@ -8,6 +8,7 @@ struct BookListConfigurator {
         interactor.presenter = presenter
         presenter.view = view
         view?.presenter = presenter
+        view?.router.view = view
     }
     
 }

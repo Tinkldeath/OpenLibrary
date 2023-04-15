@@ -9,6 +9,11 @@ protocol ImageCacheProtocol {
 
 final class CoreDataManager {
     
+    private lazy var items = {
+        let items = try! self.persistentContainer.viewContext.fetch(CachedImage.fetchRequest()).lazy.count
+        return items
+    }()
+    
     // MARK: - Core Data stack
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "OpenLibraryClient")
@@ -21,7 +26,6 @@ final class CoreDataManager {
     }()
 
     // MARK: - Core Data Saving support
-
     private func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -34,12 +38,12 @@ final class CoreDataManager {
         }
     }
     
+    // MARK: - SINGLETON
     public static var shared = {
         return _instance
     }()
     
     private static var _instance = CoreDataManager()
-    
     private init() {}
     
 }
@@ -47,50 +51,36 @@ final class CoreDataManager {
 
 extension CoreDataManager: ImageCacheProtocol {
     
+    // MARK: - THREAD SAFE METHODS FOR CACHING IMAGES
     func cache(_ cover: Int, _ image: Data?) {
-        do {
-            self.manageCache()
-            if let cached = try self.persistentContainer.viewContext.fetch(CachedImage.fetchRequest()).first(where: { $0.cover == Int64(cover) }) {
-                cached.image = image
-                self.saveContext()
-            } else {
-                guard image != nil else { return }
-                let cached = CachedImage(context: self.persistentContainer.viewContext)
-                cached.cover = Int64(cover)
-                cached.image = image
-                self.saveContext()
-            }
-        } catch {
-            print(String(describing: error))
+        self.manageCache()
+        let cached = try! self.persistentContainer.viewContext.fetch(CachedImage.fetchRequest()).first(where: { $0.cover == Int64(cover) })
+        guard cached == nil else { return }
+        DispatchQueue.main.async {
+            let item = CachedImage(context: self.persistentContainer.viewContext)
+            item.cover = Int64(cover)
+            item.image = image
+            self.saveContext()
         }
     }
     
     func findInCache(_ cover: Int) -> Data? {
-        do {
-            if let cached = try self.persistentContainer.viewContext.fetch(CachedImage.fetchRequest()).first(where: { $0.cover == Int64(cover) }) {
-                return cached.image
-            }
-        } catch {
-            print(String(describing: error))
-        }
-        return nil
+        return try! self.persistentContainer.viewContext.fetch(CachedImage.fetchRequest()).first(where: { $0.cover == Int64(cover) })?.image
     }
         
     private func manageCache() {
         DispatchQueue.global(qos: .utility).async {
-            let cahed = try? self.persistentContainer.viewContext.fetch(CachedImage.fetchRequest())
-            guard cahed != nil else { return }
-            let count = cahed!.count
-            if count > 1000 {
-                cahed!.forEach { value in
-                    DispatchQueue.main.async {
-                            self.persistentContainer.viewContext.delete(value)
-                        }
-                    }
-                DispatchQueue.main.async {
-                    self.saveContext()
-                }
+            guard self.items > 1000 else { return }
+            self.clearImages()
+        }
+    }
+    
+    private func clearImages() {
+        DispatchQueue.main.async {
+            try! self.persistentContainer.viewContext.fetch(CachedImage.fetchRequest()).lazy.forEach { image in
+                self.persistentContainer.viewContext.delete(image)
             }
+            self.saveContext()
         }
     }
     
